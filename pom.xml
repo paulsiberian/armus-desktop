@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.paulsiberian.armus</groupId>
+    <artifactId>armus-desktop</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <!--    Dependencies version    -->
+        <javafx.version>11.0.2</javafx.version>
+        <ikonli.version>11.3.4</ikonli.version>
+        <efxclipse.version>2.2.0</efxclipse.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-materialdesign-pack</artifactId>
+            <version>${ikonli.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-javafx</artifactId>
+            <version>${ikonli.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>at.bestsolution.eclipse</groupId>
+            <artifactId>org.eclipse.fx.core</artifactId>
+            <version>${efxclipse.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>at.bestsolution.eclipse</groupId>
+            <artifactId>org.eclipse.fx.ui.controls</artifactId>
+            <version>${efxclipse.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>at.bestsolution.eclipse</groupId>
+            <artifactId>org.eclipse.fx.ui.panes</artifactId>
+            <version>${efxclipse.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>at.bestsolution.eclipse</groupId>
+            <artifactId>org.eclipse.fx.ui.animation</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.1</version>
+                <configuration>
+                    <mainClass>io.github.paulsiberian.armus.App</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>paulsiberian-mvn-repo</id>
+            <url>https://rowIndex.github.com/paulsiberian/paulsiberian.github.io/mvn-repo</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>

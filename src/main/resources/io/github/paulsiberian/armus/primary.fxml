@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import org.eclipse.fx.ui.controls.filesystem.DirectoryTreeView?>
+<?import org.eclipse.fx.ui.controls.filesystem.DirectoryView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<BorderPane minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.paulsiberian.armus.PrimaryController">
+   <center>
+      <SplitPane dividerPositions="0.3" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <DirectoryTreeView fx:id="fsTreeView" minWidth="150.0" />
+            <DirectoryView fx:id="fsView" minWidth="350.0" />
+         </items>
+      </SplitPane>
+   </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <Button fx:id="menuButton" mnemonicParsing="false" text="Menu">
+               <graphic>
+                  <FontIcon iconLiteral="mdi-menu" iconSize="24" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Menu" />
+               </tooltip>
+            </Button>
+            <Button fx:id="addFolderButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addFolderAction">
+               <graphic>
+                  <FontIcon iconLiteral="mdi-folder-plus" iconSize="24" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Add Folder" />
+               </tooltip>
+            </Button>
+            <Button fx:id="removeFolderButton" layoutX="96.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeFolderAction">
+               <graphic>
+                  <FontIcon iconLiteral="mdi-folder-remove" iconSize="24" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Remove Folder" />
+               </tooltip>
+            </Button>
+          <Button fx:id="primaryButton" mnemonicParsing="false" onAction="#switchToSecondary" text="Button" />
+        </items>
+      </ToolBar>
+   </top>
+</BorderPane>
