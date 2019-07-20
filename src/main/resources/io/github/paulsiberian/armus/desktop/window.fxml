@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
+<?import org.controlsfx.control.StatusBar?>
+
+<!--
+  ~ Copyright (c) Храпунов П. Н., 2019.
+  -->
+
+<Stage title="%window.title" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.paulsiberian.armus.desktop.MainController">
+    <scene>
+        <Scene>
+            <BorderPane>
+                <top>
+                    <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+                        <menus>
+                            <Menu fx:id="fileMenu" mnemonicParsing="false" text="%menubar.file">
+                                <items>
+                                    <Menu fx:id="fileNewMenu" mnemonicParsing="false" text="%menubar.file.new">
+                                    </Menu>
+                                    <SeparatorMenuItem />
+                                    <MenuItem mnemonicParsing="false" onAction="#file_exit" text="%menubar.file.exit" />
+                                </items>
+                            </Menu>
+                            <Menu fx:id="editMenu" mnemonicParsing="false" text="%menubar.edit">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="%menubar.edit.delete" />
+                                </items>
+                            </Menu>
+                            <Menu fx:id="helpMenu" mnemonicParsing="false" text="%menubar.help">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="%menubar.help.about" onAction="#help_about" />
+                                </items>
+                            </Menu>
+                        </menus>
+                    </MenuBar>
+                </top>
+                <bottom>
+                    <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                        <children>
+                            <StatusBar HBox.hgrow="ALWAYS" />
+                            <StatusBar HBox.hgrow="ALWAYS" />
+                            <StatusBar HBox.hgrow="ALWAYS" />
+                        </children>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+        </Scene>
+    </scene>
+</Stage>
